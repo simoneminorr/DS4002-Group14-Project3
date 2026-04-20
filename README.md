@@ -132,8 +132,13 @@ The reproduction is successful if:
 
 ## References
 
-[1] International Skin Imaging Collaboration, "ISIC 2019: Training data," ISIC Archive, 2019. [Online]. Available: https://archive.isic-archive.com/
-[2] M. Tan and Q. Le, "EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks," in Proceedings of the 36th International Conference on Machine Learning, vol. 97, 2019, pp. 6105-6114.
+[1] MILK Study Team, "MILK10k: A Multimodal Imaging-Learning Toolkit for Skin Lesion Analysis," ISIC Archive, 2025. [Online]. Available: https://challenge.isic-archive.com/landing/milk10k/
+
+[2] P. Tschandl, et al., "The MILK10k Dataset: Hierarchical Multimodal Learning for Skin Cancer Diagnosis," Journal of Investigative Dermatology, vol. 146, no. 2, 2025.
+
+[3] M. Tan and Q. V. Le, "EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks," in Proceedings of the 36th International Conference on Machine Learning, PMLR 97, 2019, pp. 6105-6114.
+
+[4] International Skin Imaging Collaboration, "ISIC Archive," 2026. [Online]. Available: https://archive.isic-archive.com/
 
 ### Data Licensing
 The image data used in this project is sourced from the ISIC Archive and is 
