@@ -135,3 +135,9 @@ The reproduction is successful if:
 [1] International Skin Imaging Collaboration, "ISIC 2019: Training data," ISIC Archive, 2019. [Online]. Available: https://archive.isic-archive.com/
 [2] M. Tan and Q. Le, "EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks," in Proceedings of the 36th International Conference on Machine Learning, vol. 97, 2019, pp. 6105-6114.
 [3] Project TIER, "The TIER Protocol 4.0," 2023. [Online]. Available: https://www.projecttier.org/tier-protocol/protocol-4-0/
+
+### Data Licensing
+The image data used in this project is sourced from the ISIC Archive and is 
+provided under the **Creative Commons Attribution-NonCommercial 4.0 International 
+(CC BY-NC 4.0)** license. Users of this repository must adhere to the 
+non-commercial restrictions and attribution requirements set forth by ISIC.
