@@ -138,8 +138,6 @@ The reproduction is successful if:
 
 [3] M. Tan and Q. V. Le, "EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks," in Proceedings of the 36th International Conference on Machine Learning, PMLR 97, 2019, pp. 6105-6114.
 
-[4] International Skin Imaging Collaboration, "ISIC Archive," 2026. [Online]. Available: https://archive.isic-archive.com/
-
 ### Data Licensing
 The image data used in this project is sourced from the ISIC Archive and is 
 provided under the **Creative Commons Attribution-NonCommercial 4.0 International 
