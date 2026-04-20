@@ -42,7 +42,7 @@ Ds4002-Group14-Project3/
 ├── README.md
 │
 ├── DATA/
-│   ├── How_to_Acquire_Images.txt
+│   ├── How_to_Acquire_Images.md
 │   ├── MILK10k_Training_GroundTruth.csv
 │   ├── MILK10k_Training_Metadata.csv
 │   └── Data_Appendix.pdf
@@ -51,8 +51,7 @@ Ds4002-Group14-Project3/
 │   ├── 11-Class_Image-Only.ipynb
 │   ├── 11-Class_Multimodal.ipynb
 │   ├── Binary_Image-Only.ipynb
-│   ├── Binary_Multimodal.ipynb
-│   └── Ds_Project_3_Attempt...
+│   └── Binary_Multimodal.ipynb
 │
 └── OUTPUT/
     ├── 11-Class_Image-Only/
@@ -66,16 +65,16 @@ Ds4002-Group14-Project3/
     │   ├── curves_11class_mm.png
     │   └── test_cm_11class_mm.png
     ├── Binary_Image-Only/
-    │   ├── Binary_Image_Best_Epoch.pth
-    │   ├── Binary_Image_Classification_Report.txt
+    │   ├── Binary_Image_Best_Epoch.png
+    │   ├── Binary_Image_Classification_Report.png
     │   ├── Binary_Image_Confusion_Matrix.png
-    │   ├── Binary_Image_Epoch_Log.csv
+    │   ├── Binary_Image_Epoch_Log.png
     │   └── Binary_Image_Plots.png
     └── Binary_Multimodal/
-        ├── Binary_mm_Best_Epoch.pth
-        ├── Binary_mm_Classification_Report.txt
+        ├── Binary_mm_Best_Epoch.png
+        ├── Binary_mm_Classification_Report.png
         ├── Binary_mm_Confusion_Matrix.png
-        ├── Binary_mm_Epoch_Log.csv
+        ├── Binary_mm_Epoch_Log.png
         └── Binary_mm_Plots.png
 ```
 
@@ -109,7 +108,7 @@ pip install torch torchvision timm pandas numpy matplotlib seaborn scikit-learn 
 The scripts are modular and can be run independently depending on the desired experiment. Each notebook contains code to:
 
 1.  Load and merge the CSV metadata from the `DATA` folder.
-2.  Perform a 70/15/15 stratified split by `lesion_id` to ensure no images of the same lesion appear in multiple sets.
+2.  Perform a stratified split by `lesion_id` to ensure no images of the same lesion appear in multiple sets.
 3.  Initialize the EfficientNet-B0 model with pre-trained weights.
 4.  Execute the training loop, featuring a 3-epoch backbone freeze to stabilize the classification head and prevent overfitting.
 5.  Generate and save performance plots to the corresponding subfolder in `OUTPUT`.
@@ -123,6 +122,13 @@ The reproduction is successful if:
 1.  The script generates a `.pth` model checkpoint in the `OUTPUT` directory.
 2.  The Validation AUC stabilizes or improves across 20 epochs.
 3.  The confusion matrix and training curves are saved as `.png` files in the experiment-specific folder.
+
+## Implementation Notes
+* **Class Imbalance**: Weighted sampling is implemented in the data loaders to address the high frequency of Nevus (NV) cases relative to malignant classes.
+* **Model Selection**: Validation AUC is the primary metric used for checkpointing the best model, as it is more robust to imbalanced datasets than standard accuracy.
+* **Architecture**: EfficientNet-B0 serves as a pretrained backbone for feature extraction; only the final fully connected layers are trained initially.
+* **Hardware**: GPU acceleration (NVIDIA T4 or higher) is recommended. Training on a CPU will result in significantly longer execution times.
+* **Reproducibility**: Manual random seeds are set throughout the scripts; however, minor variations in floating-point calculations on different GPU architectures may result in slight differences in final metrics.
 
 ## References
 
